@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MetaMask SDK – Connessione & Logout</title>
-  <!-- SDK MetaMask -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mokart DApp</title>
+
   <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
-  <!-- CSS -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.1/ethers.umd.min.js"
+    integrity="sha512-nhTUaJWcf19KPfEAol6WNtSUx/DKaGE1jc9hL6kMBVMigUtu4whc+cA65oq5vZALC7HlgxzW1w2/cV+GIH6T+A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="status">Stato: Disconnesso</div>
-  <button id="btnConnect">Connetti MetaMask</button>
-  <button id="btnDisconnect" disabled>Disconnetti</button>
-  <button id="btnSign" disabled>Firma Messaggio</button>
-  <div id="signature"></div>
+  <div id="topbar"></div>
+  <button id="btnDisconnect" class="btn btn-secondary">Disconnetti</button>
+  <div id="main" class="center">
+    <button id="btnConnect" class="btn btn-primary">Connetti MetaMask</button>
+    <button id="btnSign" class="btn btn-secondary" disabled>Firma Accesso</button>
+    <div id="errorMessage" class="message"></div>
+  </div>
 
-  <!-- JS -->
+  <div id="txModal" class="tx-modal hidden">
+    <div class="tx-modal-content">
+      <div id="txStatus">Invio transazione…</div>
+      <button id="txCloseBtn" class="btn btn-secondary" style="display:none;">Chiudi</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
